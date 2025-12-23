@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buy Refurbished Apple Laptops - Cashify Clone</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+
+<style>
+body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:#f9fafb;
+    color:#333;
+}
+
+/* HEADER */
+header{
+    background:#fff;
+    border-bottom:1px solid #e5e7eb;
+    position:sticky;
+    top:0;
+    z-index:50;
+    padding:12px 40px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+.nav-right {
+  display: flex;
+  gap: 20px;
+  font-weight: 500;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+/* Icons */
+.wishlist-icon,
+.cart-icon {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.wishlist-icon:hover,
+.cart-icon:hover {
+  color: #ff3b3b;
+}
+
+/* Login Button */
+.login-btn {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 6px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background: #333;
+}
+.logo{
+    font-weight:900;
+    font-size:24px;
+    color:#2dbbb1;
+}
+
+.search-box{
+    flex:1;
+    max-width:500px;
+    margin:0 40px;
+}
+
+.search-box input{
+    width:100%;
+    padding:10px 14px;
+    border-radius:6px;
+    border:none;
+    background:#f3f4f6;
+    outline:none;
+}
+
+/* LAYOUT */
+.wrapper{
+    max-width:1200px;
+    margin:auto;
+    padding:24px 16px;
+    display:flex;
+    gap:24px;
+}
+
+/* SIDEBAR */
+aside{
+    width:25%;
+}
+
+.filter-box{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:10px;
+    padding:20px;
+}
+
+.filter-title{
+    display:flex;
+    justify-content:space-between;
+    font-size:14px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.filter-box label{
+    display:flex;
+    gap:8px;
+    font-size:14px;
+    margin-bottom:8px;
+}
+
+input[type=checkbox]{
+    accent-color:#2dbbb1;
+}
+
+/* PRICE RANGE */
+.range{
+    width:100%;
+    margin:10px 0;
+}
+
+.price-box{
+    display:flex;
+    justify-content:space-between;
+}
+
+.price-box div{
+    border:1px solid #ddd;
+    padding:6px;
+    font-size:12px;
+    border-radius:4px;
+}
+
+/* PRODUCT LIST */
+main{
+    width:75%;
+}
+
+.product-card{
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:14px;
+    padding:20px;
+    display:flex;
+    gap:20px;
+    margin-bottom:16px;
+    position:relative;
+    transition:.3s;
+}
+
+.product-card:hover{
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.discount{
+    position:absolute;
+    top:16px;
+    right:16px;
+    background:#e6fffa;
+    color:#0f766e;
+    font-size:10px;
+    font-weight:700;
+    padding:4px 8px;
+    border-radius:4px;
+}
+.product-info h2{
+    font-size:14px;              /* smaller, controlled */
+    font-weight:600;
+    line-height:1.4;
+    max-height:2.8em;            /* 2 lines only */
+    overflow:hidden;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+}
+.product-info h2:hover{
+    cursor:pointer;
+    color:#2dbbb1;
+}
+
+.product-img{
+    width:180px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.product-img img{
+    height:120px;
+}
+
+.product-info h2{
+    font-size:15px;
+    font-weight:600;
+    margin:0;
+}
+
+.badges{
+    margin-top:6px;
+    display:flex;
+    gap:10px;
+    font-size:11px;
+}
+
+.lowest{
+    background:#2563eb;
+    color:#fff;
+    padding:3px 6px;
+    border-radius:4px;
+}
+
+.price{
+    margin-top:14px;
+}
+
+.price-main{
+    font-size:22px;
+    font-weight:900;
+}
+
+.strike{
+    color:#9ca3af;
+    text-decoration:line-through;
+    font-size:13px;
+}
+
+.gold{
+    color:#f59e0b;
+    font-weight:800;
+    font-size:12px;
+}
+
+.filter-section{
+    margin-bottom:22px;
+}
+
+.filter-title{
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:8px;
+    color:#111;
+}
+
+.filter-box label{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:13px;
+    margin-bottom:6px;
+    cursor:pointer;
+}
+
+.clear{
+    color:#2dbbb1;
+    font-size:11px;
+    cursor:pointer;
+}
+
+.price-active{
+    color:#2dbbb1;
+    font-weight:700;
+}
+
+
+/* =========================
+   MOBILE FIX – CASHIFY STYLE
+   ========================= */
+@media (max-width: 450px) {
+
+  /* Layout reset */
+  .wrapper {
+    flex-direction: column !important;
+  }
+
+  /* HIDE FILTER SIDEBAR */
+  aside {
+    display: none !important;
+  }
+
+  /* PRODUCTS FULL WIDTH */
+  main {
+    width: 100% !important;
+    padding: 12px;
+  }
+
+  /* PRODUCT CARD */
+  .product-card {
+    flex-direction: row;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .product-img {
+    width: 90px;
+    flex-shrink: 0;
+  }
+
+  .product-img img {
+    height: 80px;
+    object-fit: contain;
+  }
+
+  .product-info h2 {
+    font-size: 13px;
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+
+  .price-main {
+    font-size: 18px;
+  }
+
+  .discount {
+    font-size: 9px;
+    padding: 3px 6px;
+  }
+}
+.mobile-filter-btn {
+  display: none;
+}
+
+@media (max-width: 450px) {
+  .mobile-filter-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    background: #00bfa5;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 8px;
+  }
+}
+/* BREADCRUMB */
+.breadcrumb{
+  max-width:1200px;
+  margin:12px auto 0;
+  padding:0 20px;
+  font-size:13px;
+  color:#6b7280;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:6px;
+}
+
+.breadcrumb a{
+  text-decoration:none;
+  color:#00bfa5;
+  font-weight:500;
+}
+
+.breadcrumb a:hover{
+  text-decoration:underline;
+}
+
+.breadcrumb span{
+  color:#9ca3af;
+}
+
+.breadcrumb .current{
+  color:#111;
+  font-weight:600;
+}
+
+/* MOBILE */
+@media(max-width:450px){
+  .breadcrumb{
+    font-size:12px;
+    padding:0 12px;
+    line-height:1.4;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">CASHIFY</div>
+    <div class="search-box">
+        <input type="text" placeholder="Search for mobiles, accessories & more">
+    </div>
+    
+ <div class="nav-right">
+
+  <!-- Wishlist -->
+  <i class="bi bi-heart wishlist-icon"></i>
+
+  <!-- Cart -->
+  <i class="bi bi-cart3 cart-icon"></i>
+
+  <!-- Login Button -->
+  <button class="login-btn">Login</button>
+
+</div>
+</header>
+<nav class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span>›</span>
+  <a href="base.html">Products</a>
+  <span>›</span>
+
+  </nav>
+
+<div class="wrapper">
+
+<aside>
+  <div class="filter-box">
+
+    <!-- PRODUCT TYPE -->
+    <div class="filter-section">
+      <div class="filter-title">
+        Product Type <span class="clear">Clear</span>
+      </div>
+      <label><input type="checkbox" checked> Laptop</label>
+    </div>
+
+    <!-- PRICE RANGE -->
+    <div class="filter-section">
+      <div class="filter-title">Price Range</div>
+      <input type="range" min="0" max="150000" value="150000" class="range">
+      <div class="price-box">
+        <div>₹0</div>
+        <div class="price-active">₹90000</div>
+      </div>
+    </div>
+
+    <!-- RAM -->
+    <div class="filter-section">
+      <div class="filter-title">RAM</div>
+      <label><input type="checkbox" class="filter" data-type="ram" value="8"> 8 GB</label>
+<label><input type="checkbox" class="filter" data-type="ram" value="16"> 16 GB</label>
+<label><input type="checkbox" class="filter" data-type="ram" value="32"> 32 GB</label>
+
+    </div>
+
+    <!-- STORAGE -->
+    <div class="filter-section">
+      <div class="filter-title">Storage</div>
+      <label><input type="checkbox"> 256 GB SSD</label>
+      <label><input type="checkbox"> 512 GB SSD</label>
+      <label><input type="checkbox"> 1 TB SSD</label>
+    </div>
+
+    <!-- MODEL TYPE -->
+    <div class="filter-section">
+      <div class="filter-title">Model</div>
+     <label><input type="checkbox" class="filter" data-type="model" value="air"> MacBook Air</label>
+<label><input type="checkbox" class="filter" data-type="model" value="pro"> MacBook Pro</label>
+
+    </div>
+
+    <!-- PROCESSOR -->
+    <div class="filter-section">
+      <div class="filter-title">Processor</div>
+      <label><input type="checkbox" class="filter" data-type="processor" value="i5"> Intel i5</label>
+<label><input type="checkbox" class="filter" data-type="processor" value="i9"> Intel i9</label>
+
+    </div>
+
+    <!-- CONDITION -->
+    <div class="filter-section">
+      <div class="filter-title">Condition</div>
+    
+           <label><input type="checkbox" class="filter" data-type="condition" value="excellent"> Like new</label>
+      <label><input type="checkbox" class="filter" data-type="condition" value="excellent"> Excellent</label>
+<label><input type="checkbox" class="filter" data-type="condition" value="good"> Good</label>
+
+    </div>
+
+  </div>
+</aside>
+
+<button class="mobile-filter-btn" onclick="toggleFilters()">
+  ☰ Filters
+</button>
+
+<main>
+
+<div class="product-card"
+     data-price="46799"
+     data-ram="16"
+     data-storage="512"
+     data-model="pro"
+     data-processor="i9"
+     data-condition="excellent">
+
+    <span class="discount">₹22,200 OFF</span>
+
+    <div class="product-img">
+        <img src="images/maco.avif">
+    </div>
+  <div class="product-info">
+  <h2>Apple MacBook Pro 2020 (Intel i9 16") - Refurbished</h2>
+        <div class="badges">
+            <span class="lowest">Lowest Price</span>
+            ⭐ 4.4
+        </div>
+        <div class="price">
+            <span class="price-main">₹46,799</span>
+            <span class="strike">₹61,999</span><br>
+            <span style="color:#2dbbb1;font-weight:700">₹2,731</span> with
+            <span class="gold">Silver</span>
+            </div>
+    </div>
+</div>
+
+<div class="product-card"
+     data-price="33999"
+     data-ram="8"
+     data-storage="512"
+     data-model="air"
+     data-processor="i5"
+     data-condition="good">
+
+    <span class="discount">₹17,200 OFF</span>
+
+    <div class="product-img">
+        <img src="images/swett.avif">
+    </div>
+
+    <div class="product-info">
+        <a href="product.html" style="color: inherit; text-decoration: none;">
+        <h2>Apple MacBook Air 2020 A2179 (Intel Core i5 13 Inch)- Refurbished</h2>
+         <div class="badges">
+            <span class="lowest">Lowest Price</span>
+            ⭐ 4.4
+        </div>
+        <div class="price">
+            <span class="price-main">₹33,799</span>
+            <span class="strike">₹61,999</span><br>
+            <span style="color:#2dbbb1;font-weight:700">₹1,731</span> with
+            <span class="gold">Silver</span>
+            </div>
+      </a>
+    </div>
+</div>
+
+
+</main>
+</div>
+
+</body>
+<script>
+const filters = document.querySelectorAll('.filter');
+const products = document.querySelectorAll('.product-card');
+const priceSlider = document.querySelector('.range');
+
+filters.forEach(filter => {
+    filter.addEventListener('change', applyFilters);
+});
+
+priceSlider.addEventListener('input', applyFilters);
+
+function applyFilters() {
+    const selected = {
+        ram: [],
+        storage: [],
+        model: [],
+        processor: [],
+        condition: []
+    };
+
+    filters.forEach(f => {
+        if (f.checked) {
+            selected[f.dataset.type].push(f.value);
+        }
+    });
+
+    const maxPrice = parseInt(priceSlider.value);
+
+    products.forEach(product => {
+        const price = parseInt(product.dataset.price);
+        let visible = price <= maxPrice;
+
+        for (let key in selected) {
+            if (selected[key].length > 0) {
+                if (!selected[key].includes(product.dataset[key])) {
+                    visible = false;
+                }
+            }
+        }
+
+        product.style.display = visible ? "flex" : "none";
+    });
+}
+</script>
+<script>
+function toggleFilters() {
+  const aside = document.querySelector("aside");
+  aside.style.display = aside.style.display === "block" ? "none" : "block";
+}
+</script>
+
+
+</html>
