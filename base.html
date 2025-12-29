@@ -7,6 +7,8 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+ <script src="https://cdn.tailwindcss.com"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 
 <style>
@@ -16,7 +18,9 @@ body{
     background:#f9fafb;
     color:#333;
 }
-
+html,body{
+  overflow-x: hidden;
+}
 /* HEADER */
 header{
     background:#fff;
@@ -289,9 +293,90 @@ main{
   }
 
   /* HIDE FILTER SIDEBAR */
+ @media (max-width: 450px) {
   aside {
-    display: none !important;
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: #fff;
+    z-index: 999;
+    overflow-y: auto;
+    padding: 16px;
   }
+
+  aside.active {
+    display: block;
+  }
+   aside {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    z-index: 9999;
+    overflow-y: auto;
+    padding-bottom: 70px; /* space for footer */
+  }
+
+  aside.active {
+    display: block;
+  }
+
+  /* TOP BAR */
+  .mobile-filter-header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    padding: 14px 16px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    z-index: 10;
+  }
+
+  .close-filter {
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  /* BOTTOM BAR */
+  .mobile-filter-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 12px;
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid #eee;
+  }
+
+  .clear-btn {
+    flex: 1;
+    background: #f3f4f6;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+
+  .apply-btn {
+    flex: 1;
+    background: #00bfa5;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 700;
+  }
+}
+}
+
 
   /* PRODUCTS FULL WIDTH */
   main {
@@ -330,7 +415,7 @@ main{
     font-size: 9px;
     padding: 3px 6px;
   }
-}
+
 .mobile-filter-btn {
   display: none;
 }
@@ -388,6 +473,14 @@ main{
     line-height:1.4;
   }
 }
+
+
+.footer {
+  background: #000;
+  color: #fff;
+  padding: 20px;
+}
+
 </style>
 </head>
 
@@ -415,7 +508,12 @@ main{
 <nav class="breadcrumb">
   <a href="index.html">Home</a>
   <span>›</span>
-  <a href="base.html">Products</a>
+    <span class="current">Products</span>
+   <a href="about.html">About us</a>
+  <span>›</span>
+     <a href="contact.html">Contact us</a>
+  <span>›</span>
+   <a href="faq.html">FAQ</a>
   <span>›</span>
 
   </nav>
@@ -423,6 +521,11 @@ main{
 <div class="wrapper">
 
 <aside>
+     <div class="mobile-filter-header">
+    <span>Filters</span>
+    <span class="close-filter" onclick="toggleFilters()">✕</span>
+  </div>
+
   <div class="filter-box">
 
     <!-- PRODUCT TYPE -->
@@ -487,6 +590,10 @@ main{
     </div>
 
   </div>
+  <div class="mobile-filter-footer">
+  <button class="clear-btn" onclick="clearAllFilters()">Clear All</button>
+  <button class="apply-btn" onclick="toggleFilters()">Apply</button>
+</div>
 </aside>
 
 <button class="mobile-filter-btn" onclick="toggleFilters()">
@@ -532,13 +639,13 @@ main{
      data-condition="good">
 
     <span class="discount">₹17,200 OFF</span>
-
+<a href="product.html" style="color: inherit; text-decoration: none;">
     <div class="product-img">
         <img src="images/swett.avif">
     </div>
 
     <div class="product-info">
-        <a href="product.html" style="color: inherit; text-decoration: none;">
+        
         <h2>Apple MacBook Air 2020 A2179 (Intel Core i5 13 Inch)- Refurbished</h2>
          <div class="badges">
             <span class="lowest">Lowest Price</span>
@@ -557,6 +664,73 @@ main{
 
 </main>
 </div>
+
+
+
+<!-- FOOTER -->
+<footer class="bg-white border-t border-gray-200 pt-12 pb-8 px-6 md:px-20 font-sans text-gray-700">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
+            
+            <div class="space-y-6">
+               <h1 class="cash">Cashify</h1>
+                <p class="font-semibold text-sm">Follow us on</p>
+                <div class="flex space-x-4 text-xl text-gray-600">
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-bold mb-4 text-gray-900">Services</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-green-600">Sell Phone</a></li>
+                    <li><a href="#" class="hover:text-green-600">Sell Television</a></li>
+                    <li><a href="#" class="hover:text-green-600">Sell Smart Watch</a></li>
+                    <li><a href="#" class="hover:text-green-600">Repair Phone</a></li>
+                    <li><a href="#" class="hover:text-green-600">Buy Phone</a></li>
+                    <li><a href="#" class="hover:text-green-600">Recycle Phone</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold mb-4 text-gray-900">Company</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-green-600">About Us</a></li>
+                    <li><a href="#" class="hover:text-green-600">Careers</a></li>
+                    <li><a href="#" class="hover:text-green-600">Articles</a></li>
+                    <li><a href="#" class="hover:text-green-600">Become Cashify Partner</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold mb-4 text-gray-900">Sell Device</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-green-600">Mobile Phone</a></li>
+                    <li><a href="#" class="hover:text-green-600">Laptop</a></li>
+                    <li><a href="#" class="hover:text-green-600">Tablet</a></li>
+                    <li><a href="#" class="hover:text-green-600">iMac</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold mb-4 text-gray-900">Help & Support</h4>
+                <ul class="space-y-2 text-sm mb-6">
+                    <li><a href="#" class="hover:text-green-600">FAQ</a></li>
+                    <li><a href="#" class="hover:text-green-600">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-green-600">Warranty Policy</a></li>
+                </ul>
+                <h4 class="font-bold mb-4 text-gray-900">More Info</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-green-600">Terms & Conditions</a></li>
+                    <li><a href="#" class="hover:text-green-600">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+
 
 </body>
 <script>
@@ -605,9 +779,14 @@ function applyFilters() {
 </script>
 <script>
 function toggleFilters() {
-  const aside = document.querySelector("aside");
-  aside.style.display = aside.style.display === "block" ? "none" : "block";
+  document.querySelector("aside").classList.toggle("active");
 }
+function clearAllFilters() {
+  document.querySelectorAll(".filter").forEach(f => f.checked = false);
+  document.querySelector(".range").value = 150000;
+  applyFilters();
+}
+
 </script>
 
 

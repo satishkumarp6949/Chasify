@@ -305,62 +305,51 @@
   }
 }
 
-
-/* ONE ROW – 9 CARDS */
+/* CATEGORY IMAGE GRID */
 .category-row {
-  display: flex;
-  flex-wrap: nowrap;        /* 👈 KEY */
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
   gap: 12px;
 }
 
+/* CARD */
 .col-cat {
-  flex: 0 0 calc(100% / 9); /* 👈 9 equal columns */
+  width: 100%;
 }
 
-/* IMAGE CARD */
 .img-card {
-  position: relative;
+  background: #f5f9f8;
+  border-radius: 14px;
   overflow: hidden;
-  border-radius: 10px;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* IMAGE FIX */
 .img-card img {
   width: 100%;
-  height: 150px;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;   /* 👈 VERY IMPORTANT */
 }
-
-.img-label {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 8px 10px;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
-  font-size: 13px;
-  text-align: center;
-}
-
-/* HOVER */
-.img-card:hover img {
+.img-card:active img {
   transform: scale(1.05);
-  transition: 0.4s ease;
 }
 
-/* 📱 MOBILE – 450px */
+
+/* 📱 MOBILE FIX (450px) */
 @media (max-width: 450px) {
+
   .category-row {
-    flex-wrap: wrap;   /* allow wrapping on mobile */
+    grid-template-columns: repeat(2, 1fr); /* ✅ 2 per row */
+    gap: 10px;
   }
 
-  .col-cat {
-    flex: 0 0 50%;     /* 2 cards per row */
+  .img-card {
+    height: 110px;        /* ✅ stops vertical stretching */
+    border-radius: 10px;
   }
 
-  .img-card img {
-    height: 130px;
-  }
 }
 
 
@@ -597,11 +586,8 @@
   font-size: 12px;
 }
 
-.footer {
-  background: #000;
-  color: #fff;
-  padding: 20px;
-}
+
+
 
 /* 📱 MEDIA QUERY FOR 450px */
 @media (max-width: 450px) {
@@ -886,7 +872,123 @@ h2 { font-size: 24px; margin-bottom: 20px; }
     flex-direction: column;
   }
 }
+/* ===== BASE STYLES (DESKTOP SAFE) ===== */
 
+.shop-container {
+  padding: 20px 16px;
+}
+
+.main-os-row,
+.feature-row {
+  display: flex;
+  gap: 16px;
+}
+
+.os-card,
+.mini-card {
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.35s ease;
+}
+
+.os-card img,
+.mini-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+/* Hover / tap zoom */
+.os-card:hover img,
+.mini-card:hover img {
+  transform: scale(1.08);
+}
+
+
+/* 📱 MOBILE VIEW (450px & BELOW) */
+@media (max-width: 450px) {
+
+  /* 🔝 TOP 2 → ONE BELOW ANOTHER */
+  .main-os-row {
+    display: grid;
+    grid-template-columns: 1fr; /* 👈 vertical */
+    gap: 14px;
+  }
+
+  .os-card {
+    height: 160px;   /* BIG cards */
+  }
+
+  /* 🔽 BOTTOM 4 → 2 × 2 GRID */
+  .feature-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .mini-card {
+    height: 90px;
+  }
+}
+
+/* ===== UNBELIEVABLE BANNER (BASE) ===== */
+
+.unbelevible {
+  margin: 24px auto;              /* desktop safe */
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.unbelevible img {
+  width: 90%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+/* 🖥️ DESKTOP HOVER (NORMAL) */
+@media (min-width: 451px) {
+  .unbelevible:hover img {
+    transform: scale(1.06);
+  }
+
+  .unbelevible:hover {
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+  }
+}
+
+
+/* 📱 MOBILE VIEW (450px & BELOW) */
+@media (max-width: 450px) {
+
+  .unbelevible {
+    width: 100%;
+    margin: 16px auto;            /* 👈 centers it */
+    display: flex;               /* 👈 HARD CENTER FIX */
+    justify-content: center;
+    align-items: center;
+    padding: 0 12px;              /* equal side space */
+  }
+
+  .unbelevible img {
+    width: 100%;
+    border-radius: 14px;
+  }
+
+  /* Modern mobile tap effect */
+  .unbelevible:active img {
+    transform: scale(0.97);
+  }
+
+  .unbelevible:active {
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  }
+}
 
 </style>
 <body>

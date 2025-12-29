@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MacBook Pro 2021 – Refurbished | Cashify Clone</title>
+<title>Checkout | Cashify</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
@@ -17,6 +17,7 @@ body{
   font-family:'Inter',sans-serif;
   background:#f6f7f8;
 }
+
 
 /* HEADER */
 header{
@@ -83,245 +84,135 @@ header{
   background:#f2f2f2;
 }
 
+
+/* BREADCRUMB */
+.breadcrumb{
+  max-width:1100px;
+  margin:12px auto;
+  padding:0 20px;
+  font-size:13px;
+  display:flex;
+  gap:6px;
+  color:#6b7280;
+}
+.breadcrumb a{
+  color:#00bfa5;
+  text-decoration:none;
+}
+.breadcrumb .current{
+  color:#00bfa5;
+  font-weight:600;
+}
+
 /* PAGE */
-.page{
-  max-width:1200px;
+.checkout{
+  max-width:1100px;
   margin:auto;
   padding:20px;
   display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap:30px;
+  grid-template-columns: 2fr 1fr;
+  gap:20px;
 }
 
-/* IMAGE GALLERY */
-.gallery{
+/* LEFT */
+.section{
   background:#fff;
   padding:20px;
   border-radius:14px;
+  margin-bottom:16px;
 }
-.main-img{
-  text-align:center;
+.section h3{
+  margin:0 0 14px;
+  font-size:16px;
 }
-.main-img img{
-  height:300px;
-  max-width:100%;
-}
-.thumbs{
-  display:flex;
-  gap:10px;
-  margin-top:14px;
-  justify-content:center;
-}
-.thumbs img{
-  height:60px;
-  cursor:pointer;
-  border:2px solid transparent;
+
+/* ADDRESS */
+input{
+  width:100%;
+  padding:10px;
+  margin-bottom:10px;
   border-radius:6px;
-}
-.thumbs img.active{
-  border-color:#2dbbb1;
+  border:1px solid #ddd;
 }
 
-/* PRODUCT INFO */
-.info{
+/* PAYMENT */
+.payment-option{
+  border:1px solid #ddd;
+  padding:12px;
+  margin-bottom:10px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.payment-option.active{
+  border-color:#4caf50;
+  background:#f0fff4;
+}
+
+.payment-details{
+  display:none;
+  margin-top:10px;
+}
+
+.payment-option.active .payment-details{
+  display:block;
+}
+
+.payment-details input{
+  width:100%;
+  padding:10px;
+  margin-bottom:8px;
+}
+
+/* RIGHT SUMMARY */
+.summary{
   background:#fff;
   padding:20px;
   border-radius:14px;
 }
-.info h1{
-  font-size:20px;
-  margin:0 0 6px;
-}
-.rating{
-  font-size:13px;
-  color:#444;
+.summary div{
+  display:flex;
+  justify-content:space-between;
   margin-bottom:10px;
 }
-.price{
-  font-size:26px;
+.summary .total{
   font-weight:900;
-}
-.old{
-  text-decoration:line-through;
-  color:#999;
-  font-size:14px;
-}
-.off{
-  color:#0f766e;
-  background:#e6fffa;
-  padding:4px 8px;
-  font-size:11px;
-  border-radius:4px;
-  display:inline-block;
-  margin-left:8px;
+  font-size:18px;
 }
 
-/* OPTIONS */
-.option{
-  margin-top:20px;
-}
-.option h4{
-  margin-bottom:8px;
-}
-.option button{
-  padding:10px 14px;
-  border-radius:8px;
-  border:1px solid #ddd;
-  background:#fff;
-  cursor:pointer;
-  margin-right:8px;
-  margin-bottom:8px;
-}
-.option button.active{
-  border-color:#2dbbb1;
-  background:#e6fffa;
-}
-
-/* BUY */
-.buy{
-  margin-top:20px;
-}
-.buy button{
+.place-order{
   width:100%;
   padding:14px;
-  border:none;
   background:#00bfa5;
   color:#fff;
+  border:none;
+  border-radius:10px;
   font-size:16px;
   font-weight:700;
-  border-radius:10px;
   cursor:pointer;
-}
-
-/* FEATURES */
-.features{
-  margin-top:20px;
-  font-size:13px;
-}
-.features div{
-  margin-bottom:6px;
-}
-
-/* STICKY BUY (hidden by default) */
-.sticky-buy{
-  display:none;
-}
-
-/* ===================== */
-/* 🔥 MOBILE – 450px */
-/* ===================== */
-@media (max-width:450px){
-
-  header{
-    padding:10px 12px;
-    gap:10px;
-  }
-
-  .logo{
-    font-size:18px;
-  }
-
-  .search input{
-    padding:8px;
-    font-size:13px;
-  }
-
-  .page{
-    grid-template-columns:1fr;
-    padding:12px;
-    gap:14px;
-  }
-
-  .gallery{
-    padding:14px;
-  }
-
-  .main-img img{
-    height:220px;
-  }
-
-  .thumbs img{
-    height:48px;
-  }
-
-  .info{
-    padding:14px;
-  }
-
-  .info h1{
-    font-size:16px;
-    line-height:1.3;
-  }
-
-  .price{
-    font-size:22px;
-  }
-
-  .option button{
-    padding:8px 12px;
-    font-size:13px;
-  }
-
-  /* hide desktop buy */
-  .buy{
-    display:none;
-  }
-
-  /* show sticky buy */
-  .sticky-buy{
-    display:block;
-    position:fixed;
-    bottom:0;
-    left:0;
-    right:0;
-    background:#fff;
-    border-top:1px solid #ddd;
-    padding:10px;
-    z-index:99;
-  }
-}
-/* BREADCRUMB */
-.breadcrumb{
-  max-width:1200px;
-  margin:12px auto 0;
-  padding:0 20px;
-  font-size:13px;
-  color:#6b7280;
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  gap:6px;
-}
-
-.breadcrumb a{
-  text-decoration:none;
-  color:#00bfa5;
-  font-weight:500;
-}
-
-.breadcrumb a:hover{
-  text-decoration:underline;
-}
-
-.breadcrumb span{
-  color:#9ca3af;
-}
-
-.breadcrumb .current{
-  color:#111;
-  font-weight:600;
 }
 
 /* MOBILE */
 @media(max-width:450px){
+  .checkout{
+    grid-template-columns:1fr;
+    padding:12px;
+  }
+
+  header{
+    font-size:18px;
+    padding:10px 12px;
+  }
+
   .breadcrumb{
     font-size:12px;
     padding:0 12px;
-    line-height:1.4;
+  }
+
+  .section, .summary{
+    padding:14px;
   }
 }
-
-
 </style>
 </head>
 
@@ -345,83 +236,73 @@ header{
 
 </div>
 </header>
+
 <nav class="breadcrumb">
-  <a href="index.html">Home</a>
-  <span>›</span>
-  <a href="base.html">Products</a>
-  <span>›</span>
-  <a href="product.html">Buy Refurbished Apple</a>
-  <span>›</span>
-  <span class="current">
-   Apple MacBook Air 2020 A2179 (Intel Core i5 13 Inch)- Refurbished
-  </span>
+  <a href="index.html">Home</a> ›
+  <a href="product.html">Product</a> ›
+  <span class="current">Checkout</span>
 </nav>
 
-
-<div class="page">
+<div class="checkout">
 
   <!-- LEFT -->
-  <div class="gallery">
-    <div class="main-img">
-      <img id="mainImg" src="images/swett.avif">
+  <div>
+
+    <div class="section">
+      <h3>Delivery Address</h3>
+      <input placeholder="Full Name">
+      <input placeholder="Mobile Number">
+      <input placeholder="Address">
+      <input placeholder="City">
+      <input placeholder="Pincode">
     </div>
-    <div class="thumbs">
-      <img src="images/fronter.avif" class="active" onclick="changeImg(this)">
-      <img src="images/logger.avif" onclick="changeImg(this)">
-      <img src="images/sider.avif" onclick="changeImg(this)">
+
+    <div class="left">
+    <h3>Payment Method</h3>
+
+    <div class="payment-option active" onclick="selectPayment(0)">
+      💵 Cash on Delivery
     </div>
+
+    <div class="payment-option" onclick="selectPayment(1)">
+      💳 Credit / Debit Card
+      <div class="payment-details">
+        <input placeholder="Card Number">
+        <input placeholder="MM / YY">
+        <input placeholder="CVV">
+      </div>
+    </div>
+
+    <div class="payment-option" onclick="selectPayment(2)">
+      📱 UPI / Wallet
+      <div class="payment-details">
+        <input placeholder="Enter UPI ID">
+      </div>
+    </div>
+  </div>
+
   </div>
 
   <!-- RIGHT -->
-  <div class="info">
-    <h1>Apple MacBook Air 2020 A2179 (Intel Core i5 13 Inch)- Refurbished</h1>
-    <div class="rating">⭐ 4.7 | 59 Reviews</div>
+  <div class="summary">
+    <h3>Order Summary</h3>
 
     <div>
-      <span class="price" id="price">₹33,799</span>
-      <span class="old">₹61,999</span>
-      <span class="off">15% OFF</span>
+      <span>MacBook Air 2020</span>
+      <span>₹33,799</span>
+    </div>
+    <div>
+      <span>Shipping</span>
+      <span>FREE</span>
+    </div>
+    <div class="total">
+      <span>Total</span>
+      <span>₹33,799</span>
     </div>
 
-    <!-- RAM -->
-    <div class="option">
-      <h4>RAM</h4>
-      <button class="active" onclick="setPrice(74399,this)">16 GB</button>
-      <button onclick="setPrice(82399,this)">32 GB</button>
-    </div>
-
-    <!-- STORAGE -->
-    <div class="option">
-      <h4>Storage</h4>
-      <button class="active">512 GB SSD</button>
-      <button>1 TB SSD</button>
-    </div>
-
-    <!-- WARRANTY -->
-    <div class="option">
-      <h4>Warranty</h4>
-      <button class="active">6 Months</button>
-      <button>12 Months</button>
-    </div>
-
-    <div class="buy">
-      <button onclick="buyNow()">Buy Now</button>
-    </div>
-
-    <div class="features">
-      <div>✔ 15-Point Quality Check</div>
-      <div>✔ Cash on Delivery Available</div>
-      <div>✔ Free Shipping</div>
-    </div>
+    <button class="place-order">Place Order</button>
   </div>
 
-</div>
-
-<!-- MOBILE BUY BAR -->
-<div class="sticky-buy">
-  <button onclick="buyNow()" style="width:100%;padding:14px;border:none;background:#00bfa5;color:#fff;font-weight:700;border-radius:8px">
-    Buy Now – <span id="mobilePrice">₹74,399</span>
-  </button>
 </div>
 
 
@@ -490,25 +371,16 @@ header{
 
     </footer>
 
-
 <script>
-function changeImg(el){
-  document.getElementById('mainImg').src = el.src;
-  document.querySelectorAll('.thumbs img').forEach(i=>i.classList.remove('active'));
-  el.classList.add('active');
-}
+function selectPayment(index){
+  const options = document.querySelectorAll(".payment-option");
 
-function setPrice(price,btn){
-  document.getElementById('price').innerText = "₹"+price.toLocaleString();
-  document.getElementById('mobilePrice').innerText = "₹"+price.toLocaleString();
-  btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-}
+  options.forEach(option => {
+    option.classList.remove("active");
+  });
 
-function buyNow(){
-  window.location.href = "checkout.html";
+  options[index].classList.add("active");
 }
-
 </script>
 
 </body>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ | Cashify Clone</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:#f6f7f8;
+}
+
+/* HEADER */
+header{
+  background:#fff;
+  padding:12px 20px;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  border-bottom:1px solid #eee;
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+.logo{
+  font-size:22px;
+  font-weight:900;
+  color:#2dbbb1;
+}
+.search{flex:1}
+.search input{
+  width:100%;
+  padding:10px;
+  border-radius:6px;
+  border:none;
+  background:#f2f2f2;
+}
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+.wishlist-icon,
+.cart-icon{
+  font-size:22px;
+  cursor:pointer;
+}
+.login-btn{
+  background:#000;
+  color:#fff;
+  border:none;
+  padding:6px 18px;
+  border-radius:6px;
+  font-size:14px;
+}
+
+/* BREADCRUMB */
+.breadcrumb{
+  max-width:1200px;
+  margin:12px auto 0;
+  padding:0 20px;
+  font-size:13px;
+  color:#6b7280;
+  display:flex;
+  gap:6px;
+}
+.breadcrumb a{
+  color:#00bfa5;
+  text-decoration:none;
+  font-weight:500;
+}
+.breadcrumb .current{
+  color:#111;
+  font-weight:600;
+}
+
+/* PAGE */
+.page{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+}
+
+/* FAQ */
+.faq-box{
+  background:#fff;
+  border-radius:14px;
+  padding:30px;
+}
+.faq-box h1{
+  font-size:26px;
+  margin-bottom:20px;
+}
+
+.faq-item{
+  border-bottom:1px solid #eee;
+}
+.faq-question{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 0;
+  cursor:pointer;
+  font-weight:600;
+  font-size:15px;
+}
+.faq-question i{
+  transition:.3s;
+  color:#0f766e;
+}
+.faq-answer{
+  display:none;
+  font-size:14px;
+  color:#555;
+  padding-bottom:16px;
+  line-height:1.6;
+}
+.faq-item.active .faq-answer{
+  display:block;
+}
+.faq-item.active i{
+  transform:rotate(180deg);
+}
+
+/* MOBILE */
+@media(max-width:450px){
+
+  header{
+    padding:10px 12px;
+    gap:10px;
+  }
+
+  .logo{font-size:18px}
+
+  .search input{
+    padding:8px;
+    font-size:13px;
+  }
+
+  .breadcrumb{
+    font-size:12px;
+    padding:0 12px;
+  }
+
+  .page{
+    padding:12px;
+  }
+
+  .faq-box{
+    padding:18px;
+  }
+
+  .faq-box h1{
+    font-size:20px;
+  }
+
+  .faq-question{
+    font-size:14px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">CASHIFY</div>
+  <div class="search">
+    <input placeholder="Search for laptops, mobiles & more">
+  </div>
+  <div class="nav-right">
+    <i class="bi bi-heart wishlist-icon"></i>
+    <i class="bi bi-cart3 cart-icon"></i>
+    <button class="login-btn">Login</button>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span>›</span>
+  <a href="base.html">Products</a>
+  <span>›</span>
+  <a href="about.html">About us</a>
+  <span>›</span>
+  <a href="contact.html">Contact us</a>
+  <span>›</span>
+  <span class="current">FAQ</span>
+</nav>
+
+<!-- PAGE -->
+<div class="page">
+
+  <div class="faq-box">
+    <h1>Frequently Asked Questions</h1>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        What is Cashify?
+        <i class="bi bi-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        Cashify is an online platform where you can buy, sell, repair and recycle devices easily with complete trust and quality assurance.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        Are refurbished products reliable?
+        <i class="bi bi-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        Yes. All refurbished devices go through a strict 15-point quality check and are backed with warranty.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        What payment methods are accepted?
+        <i class="bi bi-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        We accept Cash on Delivery, Credit/Debit Cards, UPI and popular digital wallets.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        How long does delivery take?
+        <i class="bi bi-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        Delivery usually takes 2–5 business days depending on your location.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        Is warranty provided?
+        <i class="bi bi-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        Yes. All refurbished products come with a minimum 6-month warranty.
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- FOOTER -->
+<footer class="bg-white border-t border-gray-200 pt-12 pb-8 px-6 md:px-20 font-sans text-gray-700">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
+            
+            <div class="space-y-6">
+               <h1 class="cash">Cashify</h1>
+                <p class="font-semibold text-sm">Follow us on</p>
+                <div class="flex space-x-4 text-xl text-gray-600">
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-bold mb-4 text-gray-900">Services</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-green-600">Sell Phone</a></li>
+                    <li><a href="#" class="hover:text-green-600">Sell Television</a></li>
+                    <li><a href="#" class="hover:text-green-600">Sell Smart Watch</a></li>
+                    <li><a href="#" class="hover:text-green-600">Repair Phone</a></li>
+                    <li><a href="#" class="hover:text-green-600">Buy Phone</a></li>
+                    <li><a href="#" class="hover:text-green-600">Recycle Phone</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold mb-4 text-gray-900">Company</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-green-600">About Us</a></li>
+                    <li><a href="#" class="hover:text-green-600">Careers</a></li>
+                    <li><a href="#" class="hover:text-green-600">Articles</a></li>
+                    <li><a href="#" class="hover:text-green-600">Become Cashify Partner</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold mb-4 text-gray-900">Sell Device</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-green-600">Mobile Phone</a></li>
+                    <li><a href="#" class="hover:text-green-600">Laptop</a></li>
+                    <li><a href="#" class="hover:text-green-600">Tablet</a></li>
+                    <li><a href="#" class="hover:text-green-600">iMac</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold mb-4 text-gray-900">Help & Support</h4>
+                <ul class="space-y-2 text-sm mb-6">
+                    <li><a href="#" class="hover:text-green-600">FAQ</a></li>
+                    <li><a href="#" class="hover:text-green-600">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-green-600">Warranty Policy</a></li>
+                </ul>
+                <h4 class="font-bold mb-4 text-gray-900">More Info</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-green-600">Terms & Conditions</a></li>
+                    <li><a href="#" class="hover:text-green-600">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+<script>
+function toggleFaq(el){
+  const item = el.parentElement;
+  item.classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

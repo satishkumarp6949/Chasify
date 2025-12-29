@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Cashify Clone</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:#f6f7f8;
+}
+
+/* HEADER */
+header{
+  background:#fff;
+  padding:12px 20px;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  border-bottom:1px solid #eee;
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+.logo{
+  font-size:22px;
+  font-weight:900;
+  color:#2dbbb1;
+}
+.search{flex:1}
+.search input{
+  width:100%;
+  padding:10px;
+  border-radius:6px;
+  border:none;
+  background:#f2f2f2;
+}
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+.wishlist-icon,
+.cart-icon{
+  font-size:22px;
+  cursor:pointer;
+}
+.login-btn{
+  background:#000;
+  color:#fff;
+  border:none;
+  padding:6px 18px;
+  border-radius:6px;
+  font-size:14px;
+}
+
+/* BREADCRUMB */
+.breadcrumb{
+  max-width:1200px;
+  margin:12px auto 0;
+  padding:0 20px;
+  font-size:13px;
+  color:#6b7280;
+  display:flex;
+  gap:6px;
+}
+.breadcrumb a{
+  color:#00bfa5;
+  text-decoration:none;
+  font-weight:500;
+}
+.breadcrumb .current{
+  color:#111;
+  font-weight:600;
+}
+
+/* PAGE */
+.page{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+}
+
+/* CONTACT LAYOUT */
+.contact-wrap{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+
+/* INFO */
+.contact-info{
+  background:#fff;
+  padding:30px;
+  border-radius:14px;
+}
+.contact-info h1{
+  font-size:26px;
+  margin-bottom:10px;
+}
+.contact-info p{
+  font-size:14px;
+  color:#555;
+  margin-bottom:18px;
+}
+.info-box{
+  display:flex;
+  gap:14px;
+  margin-bottom:16px;
+}
+.info-box i{
+  font-size:20px;
+  color:#0f766e;
+}
+.info-box span{
+  font-size:14px;
+}
+
+/* FORM */
+.contact-form{
+  background:#fff;
+  padding:30px;
+  border-radius:14px;
+}
+.contact-form h2{
+  font-size:22px;
+  margin-bottom:16px;
+}
+.form-group{
+  margin-bottom:14px;
+}
+.form-group input,
+.form-group textarea{
+  width:100%;
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  font-size:14px;
+}
+.form-group textarea{
+  resize:none;
+  height:120px;
+}
+.contact-form button{
+  width:100%;
+  padding:14px;
+  background:#00bfa5;
+  color:#fff;
+  font-weight:700;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+/* MOBILE 450px */
+@media(max-width:450px){
+
+  header{
+    padding:10px 12px;
+    gap:10px;
+  }
+
+  .logo{font-size:18px}
+
+  .search input{
+    padding:8px;
+    font-size:13px;
+  }
+
+  .breadcrumb{
+    font-size:12px;
+    padding:0 12px;
+  }
+
+  .page{
+    padding:12px;
+  }
+
+  .contact-wrap{
+    grid-template-columns:1fr;
+  }
+
+  .contact-info,
+  .contact-form{
+    padding:18px;
+  }
+
+  .contact-info h1{
+    font-size:20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">CASHIFY</div>
+  <div class="search">
+    <input placeholder="Search for laptops, mobiles & more">
+  </div>
+  <div class="nav-right">
+    <i class="bi bi-heart wishlist-icon"></i>
+    <i class="bi bi-cart3 cart-icon"></i>
+    <button class="login-btn">Login</button>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span>›</span>
+    <a href="base.html">Products</a>
+  <span>›</span>
+    <a href="about.html">About us</a>
+  <span>›</span>
+  <span class="current">Contact Us</span>
+   <a href="faq.html">FAQ</a>
+  <span>›</span>
+</nav>
+
+<!-- PAGE -->
+<div class="page">
+
+  <div class="contact-wrap">
+
+    <!-- LEFT -->
+    <div class="contact-info">
+      <h1>Contact Cashify</h1>
+      <p>
+        Need help with buying, selling or repairs?  
+        Our support team is here for you.
+      </p>
+
+      <div class="info-box">
+        <i class="bi bi-geo-alt"></i>
+        <span>Cashify HQ, New Delhi, India</span>
+      </div>
+
+      <div class="info-box">
+        <i class="bi bi-envelope"></i>
+        <span>support@cashify.in</span>
+      </div>
+
+      <div class="info-box">
+        <i class="bi bi-telephone"></i>
+        <span>+91 98765 43210</span>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="contact-form">
+      <h2>Send us a message</h2>
+
+      <div class="form-group">
+        <input type="text" placeholder="Your Name">
+      </div>
+
+      <div class="form-group">
+        <input type="email" placeholder="Email Address">
+      </div>
+
+      <div class="form-group">
+        <textarea placeholder="Your Message"></textarea>
+      </div>
+
+      <button>Submit Message</button>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- FOOTER (same as product page) -->
+<footer class="bg-white border-t border-gray-200 pt-12 pb-8 px-6 md:px-20 font-sans text-gray-700">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
+
+    <div class="space-y-6">
+      <h1 class="font-bold text-xl text-green-600">Cashify</h1>
+      <p class="font-semibold text-sm">Follow us on</p>
+      <div class="flex space-x-4 text-xl text-gray-600">
+        <i class="fab fa-youtube"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-twitter"></i>
+      </div>
+    </div>
+
+    <div>
+      <h4 class="font-bold mb-4">Services</h4>
+      <ul class="space-y-2 text-sm">
+        <li>Sell Phone</li>
+        <li>Repair Phone</li>
+        <li>Buy Phone</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-bold mb-4">Company</h4>
+      <ul class="space-y-2 text-sm">
+        <li>About Us</li>
+        <li>Careers</li>
+        <li>Articles</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-bold mb-4">Sell Device</h4>
+      <ul class="space-y-2 text-sm">
+        <li>Mobile</li>
+        <li>Laptop</li>
+        <li>Tablet</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-bold mb-4">Help & Support</h4>
+      <ul class="space-y-2 text-sm">
+        <li>FAQ</li>
+        <li>Contact Us</li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
