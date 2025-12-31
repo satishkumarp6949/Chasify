@@ -363,11 +363,6 @@ header{
     <h1>Apple MacBook Air 2020 A2179 (Intel Core i5 13 Inch)- Refurbished</h1>
     <div class="rating">⭐ 4.7 | 59 Reviews</div>
 
-    <div>
-      <span class="price" id="price">₹33,799</span>
-      <span class="old">₹61,999</span>
-      <span class="off">15% OFF</span>
-    </div>
 
     <!-- RAM -->
     <div class="option">
@@ -405,10 +400,13 @@ header{
 
 <!-- MOBILE BUY BAR -->
 <div class="sticky-buy">
-  <button onclick="buyNow()" style="width:100%;padding:14px;border:none;background:#00bfa5;color:#fff;font-weight:700;border-radius:8px">
-    Buy Now – <span id="mobilePrice">₹74,399</span>
+  <button 
+    onclick="buyNow()"
+    style="width:100%;padding:14px;border:none;background:#25D366;color:#fff;font-weight:700;border-radius:8px">
+    💬 Buy Now on WhatsApp
   </button>
 </div>
+
 
 
 
@@ -496,6 +494,20 @@ function buyNow(){
 }
 
 </script>
+<script>
+function buyNow() {
+  const product = "Apple MacBook Pro 2020 (Refurbished)";
+  const message = `Hi Maruthi Computers,%0A%0AI want to buy:%0A📦 ${product}`;
+
+  const whatsappNumber = "6361976949"; // your WhatsApp number
+
+  window.open(
+    `https://wa.me/${whatsappNumber}?text=${message}`,
+    "_blank"
+  );
+}
+</script>
+
 
 </body>
 </html>

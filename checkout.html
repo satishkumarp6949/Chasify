@@ -275,7 +275,6 @@ input{
 
     <div>
       <span>MacBook Air 2020</span>
-      <span>₹33,799</span>
     </div>
     <div>
       <span>Shipping</span>
@@ -283,10 +282,13 @@ input{
     </div>
     <div class="total">
       <span>Total</span>
-      <span>₹33,799</span>
+    
     </div>
 
-    <button class="place-order">Place Order</button>
+  <button class="place-order" onclick="sendToWhatsApp()">
+  Place Order on WhatsApp
+</button>
+
   </div>
 
 </div>
@@ -367,7 +369,37 @@ function selectPayment(index){
 
   options[index].classList.add("active");
 }
+
+
 </script>
+
+<script>
+function sendToWhatsApp() {
+
+  const name = document.querySelector('input[placeholder="Full Name"]').value;
+  const mobile = document.querySelector('input[placeholder="Mobile Number"]').value;
+  const address = document.querySelector('input[placeholder="Address"]').value;
+  const city = document.querySelector('input[placeholder="City"]').value;
+  const pincode = document.querySelector('input[placeholder="Pincode"]').value;
+
+  const product = "Apple MacBook Air 2020"; // change per page if needed
+
+  let message = `Hi Maruthi Computers,%0A%0A`
+    + `I want to order:%0A`
+    + `📦 Product: ${product}%0A%0A`
+    + `👤 Name: ${name}%0A`
+    + `📞 Mobile: ${mobile}%0A`
+    + `🏠 Address: ${address}, ${city} - ${pincode}`;
+
+  const whatsappNumber = "6361976949"; // 
+
+  window.open(
+    `https://wa.me/${whatsappNumber}?text=${message}`,
+    "_blank"
+  );
+}
+</script>
+
 
 </body>
 </html>

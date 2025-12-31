@@ -596,6 +596,25 @@
   }
 }
 
+.whatsapp-btn {
+  display: block;
+  margin: 12px auto 0;
+  padding: 10px 16px;
+  background: #25D366;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+  color: #fff;
+}
 
 
 /* Container and Typography */
@@ -671,16 +690,69 @@ h2 { font-size: 24px; margin-bottom: 20px; }
 }
 
 /* TOP 2 IMAGES */
-.main-os-row {
+.os-list {
+  max-width: 1100px;
+  margin: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  margin-bottom: 25px;
 }
 
-.os-card img {
-  width: 100%;
-  border-radius: 12px;
+/* COLORED BOX */
+.os-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #ffe7df, #ffd1c4);
+  cursor: pointer;
+}
+
+.os-box img {
+  width: 150px;
+  border-radius: 14px;
+}
+
+.os-info h3 {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+/* BUTTON HIDDEN */
+.wa-btn {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  padding: 10px 22px;
+  background: #25D366;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+/* DESKTOP HOVER */
+.os-box:hover .wa-btn {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* MOBILE */
+@media (max-width: 450px) {
+  .os-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* shown only after tap */
+  .os-box.active .wa-btn {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
 }
 
 /* BOTTOM 4 IMAGES */
@@ -1202,7 +1274,7 @@ h2 { font-size: 24px; margin-bottom: 20px; }
   <a href="https://wa.me/6361976949?text=Hi%20I%20am%20interested%20in%20Apple%20MacBook%20Pro" 
      target="_blank" class="wa-link">
 
-    <span class="badge-discount">₹12,000 OFF</span>
+   
 
     <img src="images/applemac.avif" alt="Apple MacBook Pro">
 
@@ -1220,7 +1292,7 @@ h2 { font-size: 24px; margin-bottom: 20px; }
       <div class="product-card">
          <a href="https://wa.me/6361976949?text=Hi%20I%20am%20interested%20in%20Apple%20MacBook%20Pro" 
      target="_blank" class="wa-link">
-        <span class="badge-discount">₹1,500 OFF</span>
+        
         <img src="images/lenovothink.avif">
         <h6>Lenovo ThinkPad</h6>
           <button class="wa-btn">
@@ -1236,7 +1308,7 @@ h2 { font-size: 24px; margin-bottom: 20px; }
       <div class="product-card">
          <a href="https://wa.me/6361976949?text=Hi%20I%20am%20interested%20in%20Apple%20MacBook%20Pro" 
      target="_blank" class="wa-link">
-        <span class="badge-discount">₹4,500 OFF</span>
+      
         <img src="images/dellll.avif">
         <h6>Dell Latitude</h6>
           <button class="wa-btn">
@@ -1251,7 +1323,7 @@ h2 { font-size: 24px; margin-bottom: 20px; }
       <div class="product-card">
          <a href="https://wa.me/6361976949?text=Hi%20I%20am%20interested%20in%20Apple%20MacBook%20Pro" 
      target="_blank" class="wa-link">
-        <span class="badge-discount">₹1,500 OFF</span>
+        
         <img src="images/hppp.avif">
         <h6>HP/Compaq</h6>
            <button class="wa-btn">
@@ -1298,92 +1370,94 @@ h2 { font-size: 24px; margin-bottom: 20px; }
 
     <!-- Card 1 -->
     <div class="openbox-card">
-      <span class="discount">₹3,500 OFF</span>
       <img src="images/acer.avif" alt="Monitor">
       <h6>Acer EK220Q 21.5 Inch 100 Hz Full HD IPS Monitor</h6>
 
       <div class="rating">⭐ 4.8</div>
+       <a 
+    href="https://wa.me/6361976949?text=Hi,%20I%20am%20interested%20in%20Acer%20EK220Q%2021.5%20Inch%20Monitor"
+    target="_blank"
+    class="whatsapp-btn"
+  >💬 Buy on WhatsApp
+  </a>
 
-      <div class="price">
-        ₹4,199 <span>₹7,699</span>
-      </div>
-
-      <small>₹4,115 with CRED</small>
+    
     </div>
 
     <!-- Card 2 -->
     <div class="openbox-card">
-      <span class="discount green">₹8,201 OFF</span>
       <img src="images/samsung.avif" alt="Monitor">
       <h6>Samsung M5 27 Inch Smart Monitor</h6>
 
       <div class="rating">⭐ 4.4</div>
-
-      <div class="price">
-        ₹11,999 <span>₹30,200</span>
-      </div>
-
-      <small>₹11,759 with CRED</small>
-    </div>
+   <a 
+    href="https://wa.me/6361976949?text=Hi,%20I%20am%20interested%20in%20Acer%20EK220Q%2021.5%20Inch%20Monitor"
+    target="_blank"
+    class="whatsapp-btn"
+  >💬 Buy on WhatsApp
+  </a>
+</div>
 
     <!-- Card 3 -->
     <div class="openbox-card">
-      <span class="discount">₹10,500 OFF</span>
       <img src="images/acerx.avif" alt="Monitor">
       <h6>Acer XZ306CX 29.5 Inch Curved</h6>
 
       <div class="rating">⭐ 4.3</div>
-
-      <div class="price">
-        ₹14,499 <span>₹24,999</span>
-      </div>
-
-      <small>₹14,209 with CRED</small>
+   <a 
+    href="https://wa.me/6361976949?text=Hi,%20I%20am%20interested%20in%20Acer%20EK220Q%2021.5%20Inch%20Monitor"
+    target="_blank"
+    class="whatsapp-btn"
+  >
+    💬 Buy on WhatsApp
+  </a>
     </div>
 
      <!-- Card 4 -->
     <div class="openbox-card">
-      <span class="discount">₹10,500 OFF</span>
       <img src="images/acers.avif" alt="Monitor">
       <h6>Acer SA322Q 31.5 Inch 75 Hz UltraSlim Full HD IPS Monitor</h6>
 
       <div class="rating">⭐ 4.9</div>
 
-      <div class="price">
-        ₹10,499 <span>₹17,999</span>
-      </div>
-
-      <small>₹14,209 with CRED</small>
+        <a 
+    href="https://wa.me/6361976949?text=Hi,%20I%20am%20interested%20in%20Acer%20EK220Q%2021.5%20Inch%20Monitor"
+    target="_blank"
+    class="whatsapp-btn"
+  >
+    💬 Buy on WhatsApp
+  </a>
     </div>
 
      <!-- Card 5 -->
     <div class="openbox-card">
-      <span class="discount">₹10,500 OFF</span>
       <img src="images/samsungss.avif" alt="Monitor">
-      <h6>Samsung S3 LS22D300GAWXXL 22 Inch 75 Hz Super Slim Full HD IPS Monitor</h6>
+      <h6>Samsung S3 LS22D 22 Inch 75 Hz Super Slim </h6>
 
       <div class="rating">⭐ 4.4</div>
 
-      <div class="price">
-        ₹5,499 <span>₹12,999</span>
-      </div>
-
-      <small>₹4,209 with CRED</small>
+      <a 
+    href="https://wa.me/6361976949?text=Hi,%20I%20am%20interested%20in%20Acer%20EK220Q%2021.5%20Inch%20Monitor"
+    target="_blank"
+    class="whatsapp-btn"
+  >
+    💬 Buy on WhatsApp
+  </a>
     </div>
 
      <!-- Card 6 -->
     <div class="openbox-card">
-      <span class="discount">₹10,500 OFF</span>
       <img src="images/lg.avif" alt="Monitor">
       <h6>LG Ultrawide 29wq600 29 Inch 100 Hz Full HD IPS Monitor</h6>
 
       <div class="rating">⭐ 4.3</div>
-
-      <div class="price">
-        ₹14,499 <span>₹26,999</span>
-      </div>
-
-      <small>₹4,209 with CRED</small>
+   <a 
+    href="https://wa.me/6361976949?text=Hi,%20I%20am%20interested%20in%20Acer%20EK220Q%2021.5%20Inch%20Monitor"
+    target="_blank"
+    class="whatsapp-btn"
+  >
+    💬 Buy on WhatsApp
+  </a>
     </div>
 
 
@@ -1447,14 +1521,34 @@ h2 { font-size: 24px; margin-bottom: 20px; }
   <h2>Shop by Operating System</h2>
 
   <!-- TOP ROW (2 IMAGES) -->
-  <div class="main-os-row">
-    <div class="os-card">
-      <img src="images/windows.avif" alt="Windows Laptop">
-    </div>
-    <div class="os-card">
-      <img src="images/mac.avif" alt="Macbook">
+<div class="os-list">
+
+  <div class="os-box" onclick="toggleBtn(this)">
+    <img src="images/lenovothink.avif" alt="Windows Laptop">
+
+    <div class="os-info">
+      <h3>Windows Laptops</h3>
+
+      <button class="wa-btn" onclick="openWhatsApp('Windows Laptops'); event.stopPropagation();">
+        💬 Buy on WhatsApp
+      </button>
     </div>
   </div>
+
+  <div class="os-box" onclick="toggleBtn(this)">
+    <img src="images/applemac.avif" alt="MacBook">
+
+    <div class="os-info">
+      <h3>MacBooks</h3>
+
+      <button class="wa-btn" onclick="openWhatsApp('MacBooks'); event.stopPropagation();">
+        💬 Buy on WhatsApp
+      </button>
+    </div>
+  </div>
+
+</div>
+
 
   <!-- BOTTOM ROW (4 IMAGES) -->
   <div class="feature-row">
@@ -1592,4 +1686,22 @@ allDropdown.addEventListener('click', () => {
 });
 
 </script>
+<script>
+function toggleBtn(box) {
+  if (window.innerWidth <= 450) {
+    box.classList.toggle("active");
+  }
+}
+
+function openWhatsApp(product) {
+  const number = "6361976949"; // your WhatsApp number
+  const msg = `Hi Maruthi Computers, I am interested in ${product}.`;
+
+  window.open(
+    `https://wa.me/${number}?text=${encodeURIComponent(msg)}`,
+    "_blank"
+  );
+}
+</script>
+
 </html>
