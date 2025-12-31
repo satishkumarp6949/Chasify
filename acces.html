@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accessories | Cashify Clone</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:#f6f7f8;
+}
+
+/* HEADER */
+header{
+  background:#fff;
+  padding:12px 20px;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  border-bottom:1px solid #eee;
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+.logo{
+  font-size:22px;
+  font-weight:900;
+  color:#2dbbb1;
+}
+.search{flex:1;}
+.search input{
+  width:100%;
+  padding:10px;
+  border-radius:6px;
+  border:none;
+  background:#f2f2f2;
+}
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+.wishlist-icon,
+.cart-icon{
+  font-size:22px;
+  cursor:pointer;
+}
+.login-btn{
+  background:#000;
+  color:#fff;
+  border:none;
+  padding:6px 18px;
+  border-radius:6px;
+  font-size:14px;
+}
+
+/* BREADCRUMB */
+.breadcrumb{
+  max-width:1200px;
+  margin:12px auto 0;
+  padding:0 20px;
+  font-size:13px;
+  color:#6b7280;
+  display:flex;
+  gap:6px;
+}
+.breadcrumb a{
+  color:#00bfa5;
+  text-decoration:none;
+  font-weight:500;
+}
+.breadcrumb .current{
+  color:#111;
+  font-weight:600;
+}
+
+/* PAGE */
+.page{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+}
+
+/* ACCESSORIES GRID */
+.accessories-box{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+.accessory-card{
+  background:#fff;
+  border-radius:14px;
+  padding:15px;
+  text-align:center;
+  transition:0.3s;
+}
+.accessory-card:hover{
+  box-shadow:0 6px 15px rgba(0,0,0,0.1);
+}
+.accessory-card img{
+  width:100%;
+  height:150px;
+  object-fit:contain;
+  margin-bottom:12px;
+}
+.accessory-card h3{
+  font-size:16px;
+  margin-bottom:10px;
+  font-weight:600;
+  color:#111;
+}
+.whatsapp-btn{
+  display:inline-block;
+  background:#25D366;
+  color:#fff;
+  text-decoration:none;
+  padding:8px 16px;
+  border-radius:8px;
+  font-size:14px;
+  transition:0.3s;
+}
+.whatsapp-btn:hover{
+  background:#128C7E;
+}
+
+/* MOBILE */
+@media(max-width:450px){
+
+  header{
+    padding:10px 12px;
+    gap:10px;
+  }
+  .logo{font-size:18px}
+  .search input{padding:8px; font-size:13px;}
+  .breadcrumb{font-size:12px; padding:0 12px;}
+  .page{padding:12px;}
+  .accessory-card img{height:120px;}
+  .accessory-card h3{font-size:14px;}
+  .whatsapp-btn{padding:6px 12px; font-size:13px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">MARUTHI COMPUTERS</div>
+  
+</header>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span>›</span>
+  <span class="current">Accessories</span>
+   <a href="about.html">About us</a>
+  <span>›</span>
+   <a href="contact.html">Contact us</a>
+  <span>›</span>
+   <a href="faq.html">FAQ</a>
+  <span>›</span>
+</nav>
+
+<!-- PAGE -->
+<div class="page">
+
+  <div class="accessories-box">
+
+    <div class="accessory-card">
+      <img src="images/keyboard.avif" alt="Keyboard">
+      <h3>Mechanical Keyboard</h3>
+      <a href="https://wa.me/6361976949" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+
+    <div class="accessory-card">
+      <img src="images/mouse.jpg" alt="Mouse">
+      <h3>Wireless Mouse</h3>
+      <a href="https://wa.me/6361976949" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+
+    <div class="accessory-card">
+      <img src="images/headset.jpg" alt="Headset">
+      <h3>Gaming Headset</h3>
+      <a href="https://wa.me/6361976949" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+
+    <div class="accessory-card">
+      <img src="images/usb.jpg" alt="USB Hub">
+      <h3>USB Hub</h3>
+      <a href="https://wa.me/6361976949" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+
+    <div class="accessory-card">
+      <img src="images/web cam.jpg" alt="Webcam">
+      <h3>HD Webcam</h3>
+      <a href="https://wa.me/6361976949" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-white border-t border-gray-200 pt-12 pb-8 px-6 md:px-20 font-sans text-gray-700">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
+      
+      <div class="space-y-6">
+         <h1 class="cash">Maruthi Computers</h1>
+          <p class="font-semibold text-sm">Follow us on</p>
+          <div class="flex space-x-4 text-xl text-gray-600">
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+      </div>
+
+      <div>
+          <h4 class="font-bold mb-4 text-gray-900">Services</h4>
+          <ul class="space-y-2 text-sm">
+              <li><a href="#" class="hover:text-green-600">Sell Phone</a></li>
+              <li><a href="#" class="hover:text-green-600">Sell Television</a></li>
+              <li><a href="#" class="hover:text-green-600">Sell Smart Watch</a></li>
+              <li><a href="#" class="hover:text-green-600">Repair Phone</a></li>
+              <li><a href="#" class="hover:text-green-600">Buy Phone</a></li>
+              <li><a href="#" class="hover:text-green-600">Recycle Phone</a></li>
+          </ul>
+      </div>
+
+      <div>
+          <h4 class="font-bold mb-4 text-gray-900">Company</h4>
+          <ul class="space-y-2 text-sm">
+              <li><a href="#" class="hover:text-green-600">About Us</a></li>
+              <li><a href="#" class="hover:text-green-600">Careers</a></li>
+              <li><a href="#" class="hover:text-green-600">Articles</a></li>
+              <li><a href="#" class="hover:text-green-600">Become Partner</a></li>
+          </ul>
+      </div>
+
+      <div>
+          <h4 class="font-bold mb-4 text-gray-900">Sell Device</h4>
+          <ul class="space-y-2 text-sm">
+              <li><a href="#" class="hover:text-green-600">Mobile Phone</a></li>
+              <li><a href="#" class="hover:text-green-600">Laptop</a></li>
+              <li><a href="#" class="hover:text-green-600">Tablet</a></li>
+              <li><a href="#" class="hover:text-green-600">iMac</a></li>
+          </ul>
+      </div>
+
+      <div>
+          <h4 class="font-bold mb-4 text-gray-900">Help & Support</h4>
+          <ul class="space-y-2 text-sm mb-6">
+              <li><a href="#" class="hover:text-green-600">FAQ</a></li>
+              <li><a href="#" class="hover:text-green-600">Contact Us</a></li>
+              <li><a href="#" class="hover:text-green-600">Warranty Policy</a></li>
+          </ul>
+          <h4 class="font-bold mb-4 text-gray-900">More Info</h4>
+          <ul class="space-y-2 text-sm">
+              <li><a href="#" class="hover:text-green-600">Terms & Conditions</a></li>
+              <li><a href="#" class="hover:text-green-600">Privacy Policy</a></li>
+          </ul>
+      </div>
+  </div>
+</footer>
+
+</body>
+</html>
